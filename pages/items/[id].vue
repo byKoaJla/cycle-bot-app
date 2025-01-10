@@ -12,7 +12,7 @@ const text = ref("");
 
 <template>
     <div class="flex flex-col w-full p-4">
-        <img :src="`/img/${item?.image}`" alt="" @change="text">
+        <img :src="`/img/${item?.image}`" alt="">
         <div class="flex flex-col">
             <h1 class="text-2xl font-bold text-center">{{ item?.title }}</h1>
             <p class="text-lg text-center"> 💲{{ item?.price }}</p>

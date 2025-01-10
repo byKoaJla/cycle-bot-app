@@ -1,11 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import {resolve} from "path";
-
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
   alias: {
     assets: "/<rootDir>/assets",
+  },
+  app: {
+    head: {
+      script: [{ src: 'https://telegram.org/js/telegram-web-app.js' }],
+    },
   },
   modules: [['@pinia/nuxt',
     {
