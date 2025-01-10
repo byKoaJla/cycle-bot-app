@@ -22,7 +22,7 @@ const { initDataUnsafe } = useWebApp();
         <div class="flex w-full mt-4 ">
             <p class="text-center dark:text-white">{{ item?.description }}</p>
         </div>
-        <nuxt-link class="w-full bg-black dark:bg-white text-white dark:text-black p-2 rounded-xl" :to="`/castegories/${item?.category.title}`">
+        <nuxt-link class="w-full bg-black dark:bg-white text-white dark:text-black p-2 rounded-xl text-center mt-4" :to="`/categories/${item?.category.title}`">
             Назад к другим продуктам
         </nuxt-link>
         <MainButton class="w-full" text="Купить" @click="() => showAlert(`${initDataUnsafe.user?.username} стал владельцем`)"/>
