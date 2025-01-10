@@ -35,7 +35,7 @@ const hideSearchResults = () => {
             <div v-if="showResults && searchText"
                 class="absolute top-20 left-0 w-full p-2 bg-white border rounded-lg mt-2 shadow-lg">
                 <div class="flex flex-col gap-2 max-h-60 overflow-auto">
-                    <nuxt-link :to="`/items/${item.id}`" v-for="item in filteredItems" :key="item.id" class="p-2 hover:bg-gray-200 cursor-pointer" > 
+                    <nuxt-link :to="`/items/${item.id}`" v-for="item in filteredItems" :key="item.id" class="p-2 hover:bg-gray-200 cursor-pointer dark:text-white" > 
                         {{ item.title }}
                     </nuxt-link>
                 </div>
@@ -43,11 +43,11 @@ const hideSearchResults = () => {
         </div>
         <div class="w-full grid grid-cols-2 gap-4">
             <nuxt-link :to="`/categories/${category.title}`"
-                class="flex flex-col justify-center items-center border rounded-lg p-4 text-center min-h-36"
+                class="flex flex-col justify-center items-center border rounded-lg p-4 text-center min-h-36 dark:text-white"
                 :class="`hover:bg-[${category.color}] focus:ring-4 focus:ring-[${category.color}]/50`"
                 v-for="category in categories" :key="category.id" @click="">
-                <span class="text-6xl mb-4">{{ category.image }}</span>
-                <h1 class="text-pretty text-lg break-all">{{ category.title }}</h1>
+                <span class="text-6xl mb-4 dark:text-white">{{ category.image }}</span>
+                <h1 class="text-pretty text-lg break-all dark:text-white">{{ category.title }}</h1>
             </nuxt-link>
         </div>
     </div>

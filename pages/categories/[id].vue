@@ -22,8 +22,8 @@ const goBack = () => {
             <img 
             :src="`/img/${item.image}`" class="w-52 h-52 object-cover mx-auto" alt="no-content" />
             <div class="">
-              <h1>{{ item.title }}</h1>
-                <p>💲{{  item.price  }}</p>
+              <h1 class="dark:text-white">{{ item.title }}</h1>
+                <p class="dark:text-white">💲{{  item.price  }}</p>
             </div>
         </nuxt-link>
     </div>
