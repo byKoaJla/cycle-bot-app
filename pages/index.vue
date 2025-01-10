@@ -35,7 +35,7 @@ const hideSearchResults = () => {
             <div v-if="showResults && searchText"
                 class="absolute top-20 left-0 w-full p-2 bg-white border rounded-lg mt-2 shadow-lg">
                 <div class="flex flex-col gap-2 max-h-60 overflow-auto">
-                    <nuxt-link :to="`/items/${item.id}`" v-for="item in filteredItems" :key="item.id" class="p-2 hover:bg-gray-200 cursor-pointer dark:text-white" > 
+                    <nuxt-link :to="`/items/${item.id}`" v-for="item in filteredItems" :key="item.id" class="p-2 hover:bg-gray-200 cursor-pointer" > 
                         {{ item.title }}
                     </nuxt-link>
                 </div>
