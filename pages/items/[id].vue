@@ -7,19 +7,13 @@ const useItems = useItemsStore();
 const itemId = route.params.id;
 const item = storeToRefs(useItems).lots.value.find(f => f.id.toString() == itemId);
 
-const text = ref("");
-
 const {showAlert} = useWebAppPopup();
 const { initDataUnsafe } = useWebApp();
-const goBack = () => {
-    navigateTo(`/castegories/${item?.category.title}`);
-}
 
 </script>
 
 <template>
     <div class="flex flex-col w-full p-4">
-        <BackButton @click="goBack"/>
         <img :src="`/img/${item?.image}`" alt="">
         <div class="flex flex-col">
             <h1 class="text-2xl font-bold text-center dark:text-white">{{ item?.title }}</h1>
@@ -28,6 +22,9 @@ const goBack = () => {
         <div class="flex w-full mt-4 ">
             <p class="text-center dark:text-white">{{ item?.description }}</p>
         </div>
+        <nuxt-link class="w-full bg-black dark:bg-white text-white dark:text-black p-2 rounded-xl" :to="`/castegories/${item?.category.title}`">
+            Назад к другим продуктам
+        </nuxt-link>
         <MainButton class="w-full" text="Купить" @click="() => showAlert(`${initDataUnsafe.user?.username} стал владельцем`)"/>
     </div>
 </template>
